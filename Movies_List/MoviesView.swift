@@ -13,12 +13,10 @@ class MoviesView: UIView{
         let moviesTableView = UITableView()
         moviesTableView.allowsSelection = false
         moviesTableView.backgroundColor = .white
-        //moviesTableView.separatorStyle = .none
         return moviesTableView
     }()
     var searchField : UITextField = {
         let searchField = UITextField()
-        //searchField.text = "Search Movie"
         searchField.borderStyle = .bezel
         searchField.placeholder = "Search Movie"
         searchField.textColor = .black

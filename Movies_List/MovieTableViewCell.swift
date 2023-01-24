@@ -29,7 +29,6 @@ class MovieTableViewCell: UITableViewCell {
     lazy var cellButton : UIButton = {
         let cellButton = UIButton()
         cellButton.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 105, height: UIScreen.main.bounds.height)
-        //cellButton.backgroundColor = .black
         cellButton.addTarget(self, action: #selector(tapCell), for: .touchUpInside)
         return cellButton
     }()

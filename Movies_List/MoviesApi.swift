@@ -29,7 +29,6 @@ class MoviesApi {
         
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-                //let httpResponse = response as? HTTPURLResponse
                 let response = response as? HTTPURLResponse
                 
                 if response!.statusCode != 200 && response!.statusCode != 408 {
@@ -77,7 +76,6 @@ class MoviesApi {
         
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-                //let httpResponse = response as? HTTPURLResponse
                 let response = response as? HTTPURLResponse
                 
                 if response!.statusCode != 200 && response!.statusCode != 408 {

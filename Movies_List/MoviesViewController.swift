@@ -67,9 +67,6 @@ class MoviesViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.title = "Favorites"
                         print("IdJson correct\(json.title)")
-//                        for viewdMovie in self.viewedIdList where json.imdbid != viewdMovie {
-//                            self.moviesJsonId!.append(json)
-//                        }
                         self.moviesJsonId!.append(json)
                         self.moviesView.moviesTableView.reloadData()
                     }
@@ -90,16 +87,6 @@ class MoviesViewController: UIViewController {
         }
         return filteredMovies
     }
-//    func filterViewedMoviesId(favMovies: [MovieModelId]) -> [MovieModelId] {
-//        var filteredMovies: [MovieModelId] = []
-//
-//            for viewedMovie in viewedIdList {
-//                 filteredMovies = favMovies.filter {
-//                    $0.imdbid != viewedMovie
-//            }
-//        }
-//        return filteredMovies
-//    }
     @objc func tapSearchButton() {
         showFavorites = false
         movieTitle = moviesView.searchField.text!
@@ -127,7 +114,8 @@ class MoviesViewController: UIViewController {
                     print("Json download")
                     self.title = "Founded Movies"
                     self.moviesJson = json
-                    self.moviesJson = self.filterViewedMoviesTitle(titleMovies: self.moviesJson!)
+                        
+                    //self.moviesJson = self.filterViewedMoviesTitle(titleMovies: self.moviesJson!)
                     self.moviesView.moviesTableView.reloadData()
                 }
                 
@@ -158,7 +146,6 @@ extension MoviesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
-        //cell.backgroundColor = .green
         if showFavorites == true {
             let myMovie = self.moviesJsonId?[indexPath.row]
             guard let myMovie = myMovie else {
